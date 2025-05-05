@@ -1,0 +1,33 @@
+# Python files
+__pycache__/
+*.py[cod]
+*.so
+
+# Flask-specific files
+instance/
+*.sqlite3
+.env
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.bak
+
+# Virtual environment
+venv/
+
+# Ignore uploads folder if needed
+static/uploads/
+
+# Testing files
+.coverage
+pytest_cache/
