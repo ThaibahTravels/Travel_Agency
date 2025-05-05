@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 - Internal Server Error</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/error.css') }}">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body class="error-500">
+    <div class="container">
+        <div class="error-content">
+            <!-- Error Icon Section -->
+            <div class="error-icon-container">
+                <div class="error-icon">&#128293;</div>
+            </div>
+            <!-- Error Title Section -->
+            <div class="error-title-container">
+                <h1 class="error-title">500</h1>
+            </div>
+            <!-- Error Message Section -->
+            <div class="error-message-container">
+                <p class="error-message">Something went wrong on our end. We are working hard to fix it. Please try again later.</p>
+            </div>
+            <!-- Call to Action Section -->
+            <div class="cta-container">
+                <a href="{{ url_for('index') }}" class="back-home">Go Back to Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Thaibah Travels{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section (No background color change needed) -->
+<div class="hero-section" style="background-image: url('{{ url_for('static', filename='images/hero.jpg') }}');">
+  <div class="hero-content">
+    <h1 class="explore-text">Explore</h1>
+    <h4>Be a Part of Marvelous and Adventurous Journeys</h4>
+    <div class="hero-buttons">
+      <a href="#service-highlights" class="btn btn-primary">Explore Now</a>
+      <a href="https://wa.me/919562000109" target="_blank" class="btn btn-success">WhatsApp</a>
+    </div>
+  </div>
+</div>
+<!-- Service Highlights (Cream Background) -->
+<section class="service-highlights section-cream" id="service-highlights">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-4 text-center">
+        <img src="{{ url_for('static', filename='images/seamless_service.png') }}" alt="Seamless Service" class="img-fluid">
+        <h4>Seamless Service</h4>
+        <p>A commitment to providing hassle-free travel services, ensuring a stress-free journey from start to finish.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="{{ url_for('static', filename='images/affordable_adventures.jpeg') }}" alt="Affordable Adventures" class="img-fluid">
+        <h4>Affordable Adventures</h4>
+        <p>Delivering budget-friendly travel options without compromising on quality, offering remarkable experiences.</p>
+      </div>
+    </div>
+    
+    <!-- New Row for Third Service -->
+    <div class="row justify-content-center">
+      <div class="col-md-4 text-center">
+        <img src="{{ url_for('static', filename='images/expert_guidance.png') }}" alt="Expert Guidance" class="img-fluid">
+        <h4>Expert Guidance</h4>
+        <p>Access to knowledgeable travel experts to help you make informed decisions and maximize travel experiences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Embrace the Journey (White Background) -->
+<section class="embrace-journey section-white">
+  <div class="embrace-content">
+    <div class="embrace-images">
+      <img src="{{ url_for('static', filename='images/embrace1.jpg') }}" alt="Embrace Image 1" class="embrace-image embrace-image-1">
+      <img src="{{ url_for('static', filename='images/embrace2.jpg') }}" alt="Embrace Image 2" class="embrace-image embrace-image-2">
+      <img src="{{ url_for('static', filename='images/experience.jpg') }}" alt="Experience Icon" class="experience-icon">
+    </div>
+    <div class="embrace-text text-center">
+      <h2>Embrace the Journey</h2>
+      <p>Your dream journey awaits! Discover the world with us and make unforgettable memories.</p>
+      <ul class="features-list">
+        <li>Seamless travel planning for a stress-free experience.</li>
+        <li>Local expertise for authentic, insider adventures.</li>
+        <li>Custom trips designed around your unique preferences.</li>
+      </ul>
+      <a href="/about" class="btn btn-secondary">About Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- Packages Section -->
+<section id="packages" class="packages-section section-cream">
+  <div class="container">
+    <h1>Packages</h1>
+    <h4>Our Packages</h4>
+    <div class="slick-carousel">
+      {% for package in packages[:10] %}
+      <div class="package-card text-center">
+        <img src="{{ url_for('static', filename='images/' + package.image) }}" alt="{{ package.name }}" class="img-fluid">
+        <h4>{{ package.name }}</h4>
+        <p>{{ package.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services-section section-white">
+  <div class="container">
+    <h1>Services</h1>
+    <h4>Our Services</h4>
+    <div class="slick-carousel">
+      {% for service in services[:10] %}
+      <div class="service-card text-center">
+        <img src="{{ url_for('static', filename='images/' + service.image) }}" alt="{{ service.name }}" class="img-fluid service-image">
+        <h4>{{ service.name }}</h4>
+        <p>{{ service.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section (Cream Background) -->
+<section class="stats-section section-cream">
+  <div class="container">
+      <div class="stats-wrapper">
+          <div class="stat-item">
+              <h3>50+</h3>
+              <p>Total Destinations</p>
+          </div>
+          <div class="stat-item">
+              <h3>100+</h3>
+              <p>Travel Packages</p>
+          </div>
+          <!-- Middle Stat -->
+          <div class="stat-item stat-highlight">
+              <h3><span id="traveler-counter">0</span>+</h3>
+              <p>Total Travelers</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="why-choose-us section-cream">
+  <div class="container text-center">
+    <h2>Why Choose Thaibah Travels</h2>
+    <p>We Let Your Sweet Memory Ever Unforgettable</p>
+    <div class="row justify-content-center">
+      <!-- Trust and Reliability -->
+      <div class="col-md-4 text-center">
+        <img src="{{ url_for('static', filename='images/trust_reliability.jpg') }}" alt="Trust and Reliability" class="img-fluid rounded-circle why-choose-img">
+        <h4>Trust and Reliability</h4>
+        <p>We prioritize transparency, honesty, and reliability in all our dealings, ensuring you travel with peace of mind.</p>
+      </div>
+    <div class="row justify-content-center">
+      <!-- Expert Travel Agent -->
+      <div class="col-md-4 text-center">
+        <img src="{{ url_for('static', filename='images/expert_travel_agent.jpg') }}" alt="Expert Travel Agent" class="img-fluid rounded-circle why-choose-img">
+        <h4>Expert Travel Agent</h4>
+        <p>Ultimately, an expert travel agent is dedicated to making your travel dreams a reality.</p>
+      </div>
+      <!-- World Class Service -->
+      <div class="col-md-4 text-center">
+        <img src="{{ url_for('static', filename='images/world_class_service.png') }}" alt="World Class Service" class="img-fluid rounded-circle why-choose-img">
+        <h4>World Class Service</h4>
+        <p>Our world class service is perfected to create moments that will be cherished forever.</p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <!-- Total Secured Travel -->
+      <div class="col-md-4 text-center">
+        <img src="{{ url_for('static', filename='images/total_secured_travel.jpg') }}" alt="Total Secured Travel" class="img-fluid rounded-circle why-choose-img">
+        <h4>Total Secured Travel</h4>
+        <p>We prioritize safety above all else, implementing stringent security measures to ensure a secured journey.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block b2b %}
+<!-- B2B Section -->
+<section class="b2b-section">
+  <div class="b2b-container">
+    <div class="b2b-box" style="background-image: url('{{ url_for('static', filename='images/b2b.jpg') }}');">
+      <div class="b2b-content">
+        <!-- Flex container for text and button -->
+        <div class="b2b-flex-container">
+          <!-- Text on the left -->
+          <div class="b2b-text">
+            <h2>Let's Join<br>Hands Together</h2>
+            <p>Explore B2B opportunities with Thaibah</p>
+          </div>
+          <!-- Button on the right -->
+          <div class="b2b-buttons">
+            <a href="https://wa.me/919747007001" class="b2b-btn" target="_blank">Reach Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+{% endblock %}

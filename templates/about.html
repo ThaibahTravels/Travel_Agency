@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - Thaibah Travels{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- About Section -->
+<section class="about-us">
+    <div class="container">
+        <div class="intro">
+            <h1>Welcome to Thaibah Travels</h1>
+            <p class="intro-subtitle">Crafting Unforgettable Journeys!</p>
+            <p class="intro-description">
+                We are dedicated to making your travel experiences truly unforgettable. Travel is not just about visiting new places, it's about creating cherished memories that last a lifetime.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Embrace the Journey Section -->
+<section class="embrace-journey section-white">
+    <div class="embrace-content">
+        <div class="embrace-images">
+            <img src="{{ url_for('static', filename='images/embrace1.jpg') }}" alt="Embrace Image 1" class="embrace-image embrace-image-1">
+            <img src="{{ url_for('static', filename='images/embrace2.jpg') }}" alt="Embrace Image 2" class="embrace-image embrace-image-2">
+            <img src="{{ url_for('static', filename='images/experience.jpg') }}" alt="Experience Icon" class="experience-icon">
+        </div>
+        <div class="embrace-text text-center">
+            <h2>Embrace the Journey</h2>
+            <p>Your dream journey awaits! Discover the world with us and make unforgettable memories.</p>
+            <ul class="features-list">
+                <li>Seamless travel planning for a stress-free experience.</li>
+                <li>Local expertise for authentic, insider adventures.</li>
+                <li>Custom trips designed around your unique preferences.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section section-cream">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 mb-3">
+                <h3>50+</h3>
+                <p>Total Destinations</p>
+            </div>
+            <div class="col-md-3 mb-3">
+                <h3>100+</h3>
+                <p>Travel Packages</p>
+            </div>
+            <div class="col-md-3 mb-3">
+                <h3><span id="traveler-counter">0</span>+</h3>
+                <p>Total Travelers</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="team-section section-white">
+    <div class="container">
+        <h1>Meet Our Team</h1>
+
+        <!-- Team Heads Row -->
+        <div class="row">
+            {% for head in heads %}
+                <div class="team-member" onclick="toggleDetails(this)">
+                    <img src="{{ url_for('static', filename='images/' + head.image) }}" alt="{{ head.name }}">
+                    <div class="name">{{ head.name }}</div>
+                    <div class="position">{{ head.position }}</div>
+                    <div class="details">
+                        {% if head.email %}
+                            <div class="email">{{ head.email }}</div>
+                        {% endif %}
+                        {% if head.phone %}
+                            <div class="phone">{{ head.phone }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Team Members Row -->
+        <div class="row">
+            {% for member in members %}
+                <div class="team-member" onclick="toggleDetails(this)">
+                    <img src="{{ url_for('static', filename='images/' + member.image) }}" alt="{{ member.name }}">
+                    <div class="name">{{ member.name }}</div>
+                    <div class="position">{{ member.position }}</div>
+                    <div class="details">
+                        {% if member.email %}
+                            <div class="email">{{ member.email }}</div>
+                        {% endif %}
+                        {% if member.phone %}
+                            <div class="phone">{{ member.phone }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/about.js') }}"></script>
+<script>
+    function toggleDetails(element) {
+        const details = element.querySelector('.details');
+        details.style.display = details.style.display === 'none' ? 'block' : 'none';
+    }
+</script>
+{% endblock %}

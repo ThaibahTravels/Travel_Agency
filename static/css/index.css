@@ -1,0 +1,666 @@
+/* ================================================
+   General Styles
+================================================ */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #00cc66;
+  --text-color: #333;
+  --background-light: #f4f4f4;
+  --font-primary: 'Dancing Script', cursive;
+  --font-secondary: 'Alice', serif;
+}
+
+body {
+  color: var(--text-color);
+}
+
+.section {
+  padding: 50px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Accessibility Focus Styles */
+a:focus, .btn:focus, .b2b-btn:focus {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 4px;
+}
+
+button:focus, a:focus {
+  box-shadow: 0 0 5px 2px rgba(0, 123, 255, 0.6);
+}
+
+/* ================================================
+   Hero Section - Explore Text and Alignment
+================================================ */
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh; /* Full viewport height */
+  color: white;
+  text-align: center;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-direction: column; /* Stack elements vertically */
+}
+
+.explore-text {
+  font-family: 'Dancing Script', sans-serif;
+  color: #fff;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); /* Stronger shadow for depth */
+  font-size: 15rem; /* Increased font size */
+  font-weight: bold; /* Make the text bold */
+  margin-bottom: 2rem; /* Add some space below */
+  transform: perspective(300px) rotateX(15deg); /* 3D effect */
+  line-height: 1.2; /* Adjust line height for better spacing */
+}
+
+.hero-content h1 {
+  font-family: 'Dancing Script', sans-serif;
+  color: #fff;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); /* Stronger shadow for depth */
+  font-size: 8rem; /* Increased font size */
+  font-weight: bold; /* Make the text bold */
+  margin-bottom: 2rem; /* Add some space below */
+  transform: perspective(300px) rotateX(15deg); /* 3D effect */
+  line-height: 1.2; /* Adjust line height for better spacing */
+}
+
+.hero-buttons a {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent blue */
+  color: white;
+  font-weight: bold; /* Bold button text */
+  border-radius: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+.hero-buttons a:hover {
+  background-color: #007bff;
+  transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+.hero-buttons a:focus {
+  outline: 3px solid #007bff;
+  outline-offset: 4px;
+}
+
+/* ================================================
+   Service Highlights Section
+================================================ */
+.service-highlights {
+  padding: 50px 0;
+}
+
+.service-highlights .col-md-4 {
+  margin-bottom: 30px;
+}
+
+.service-highlights img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.service-highlights h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 10px; /* Consistent spacing below heading */
+}
+
+.service-highlights p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0; /* Prevent unwanted spacing below text */
+}
+
+
+/* ================================================
+   Embrace the Journey Section Styles
+================================================ */
+
+.embrace-journey {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  background-color: white;
+}
+
+.embrace-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.embrace-images {
+  position: relative;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.embrace-image-1,
+.embrace-image-2 {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.experience-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.embrace-text {
+  width: 45%;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.embrace-text h2 {
+  font-size: 3.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.embrace-text h2::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  border-radius: 2px;
+}
+
+.embrace-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.embrace-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.embrace-text ul li {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.embrace-text ul li::before {
+  content: '✔';
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+/* Button Styling */
+.embrace-text .btn {
+  padding: 12px 30px;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin: 0 auto; /* Center the button horizontally */
+  display: block; /* Ensures the margin works for centering */
+  text-align: center; /* Center the text inside the button */
+  transition: background-color 0.3s, transform 0.2s;
+  width: 200px; /* Set a specific width */
+}
+
+.embrace-text .btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.embrace-text .btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px 2px rgba(0, 123, 255, 0.6); /* Accessibility focus */
+}
+
+/* ================================================
+   Packages Section
+================================================ */
+.packages-section {
+  padding: 50px 0;
+}
+
+.packages-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.packages-section .package-card img {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+/* ================================================
+   Stats Section
+================================================ */
+.stats-section {
+  background-color: var(--background-light);
+  padding: 50px 0;
+  margin-top: 60px;
+  text-align: center; /* Center the content */
+}
+
+/* Stats Wrapper for Flexbox Layout */
+.stats-wrapper {
+  display: flex;
+  justify-content: space-around; /* Space between the stats */
+  align-items: center; /* Vertically center the stats */
+  flex-wrap: wrap; /* Wrap items if needed */
+}
+
+/* Stat Items */
+.stat-item {
+  background-color: #fff;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 200px; /* Fixed width */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color); /* Primary color for the stat count */
+}
+
+.stat-item p {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Highlighted Middle Stat */
+.stat-highlight {
+  background-color: var(--highlight-color); /* Light background for the highlighted stat */
+  color: #fff; /* White text */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect for Stat Cards */
+.stat-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .stats-wrapper {
+    flex-direction: column; /* Stack stats vertically on small screens */
+    align-items: center; /* Center them */
+  }
+
+  .stat-item {
+    width: 80%; /* Make stat cards wider on small screens */
+    margin: 10px 0;
+  }
+}
+
+/* ================================================
+   Why Choose Us Section
+================================================ */
+.why-choose-us {
+  padding: 50px 0;
+}
+
+.why-choose-us h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.why-choose-us .col-md-4 {
+  margin-bottom: 30px;
+}
+
+.why-choose-us h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 20px 0 10px;
+}
+
+.why-choose-us p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.why-choose-us .why-choose-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+/* ================================================
+   B2B Section
+================================================ */
+.b2b-section {
+  position: relative;
+  padding: 80px 0;
+  background-color: #f5f5dc;
+  margin-top: 20px;
+}
+
+.b2b-container {
+  padding: 10px 10%;
+  text-align: center;
+}
+
+/* Main box with background image */
+.b2b-box {
+  background: rgba(255, 255, 255, 0.85) no-repeat center/cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px 10%;
+  height: 350px;
+  max-width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; /* Center the content inside the box */
+  align-items: center; /* Vertically center the content */
+}
+
+/* Flex container to hold the text and button */
+.b2b-flex-container {
+  display: flex;
+  justify-content: space-between; /* Space between text and button */
+  align-items: center; /* Align items vertically */
+  width: 100%; /* Ensure the flex container takes full width */
+}
+
+/* Text section on the left */
+.b2b-text {
+  color: white; /* Text color set to white */
+  max-width: 50%; /* Push text more to the left */
+  margin-right: 30px; /* Add space on the right side of text */
+}
+
+.b2b-section h2 {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.b2b-section p {
+  font-family: var(--font-secondary);
+  font-size: 1.25rem;
+}
+
+/* Button section on the right */
+.b2b-buttons {
+  text-align: right; /* Align the button to the right */
+  margin-left: 30px; /* Space between button and text */
+}
+
+/* Styling for the button */
+.b2b-buttons .b2b-btn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 1rem;
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.b2b-buttons .b2b-btn:hover {
+  background-color: #007b33;
+}
+
+/* ================================================
+   Slick Carousel
+================================================ */
+.slick-carousel {
+  position: relative;
+  margin-top: 6rem;
+}
+
+.slick-carousel .slick-slide {
+  margin: 0 10px;
+}
+
+.slick-carousel .slick-slide img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.slick-carousel .slick-dots li button:before {
+  font-size: 12px;
+  color: var(--text-color);
+}
+
+.slick-carousel .slick-dots li.slick-active button:before {
+  color: var(--primary-color);
+}
+
+/* ================================================
+   Mobile-Friendly Media Queries
+================================================ */
+@media (max-width: 768px) {
+  .hero-content h1,
+  .explore-text {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-highlights {
+    display: flex;
+    gap: 15px; /* Space between items */
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    padding: 10px 0;
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+  }
+
+  .service-highlights::-webkit-scrollbar {
+    height: 8px; /* Adjust scrollbar height */
+  }
+
+  .service-highlights::-webkit-scrollbar-thumb {
+    background: #888; /* Scrollbar color */
+    border-radius: 4px; /* Rounded edges for the scrollbar */
+  }
+
+  .service-highlights::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker color on hover */
+  }
+
+  .service-highlights img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .packages-section {
+    display: flex;
+    gap: 15px; /* Space between items */
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    padding: 10px 0;
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+  }
+
+  .packages-section::-webkit-scrollbar {
+    height: 8px; /* Adjust scrollbar height */
+  }
+
+  .packages-section::-webkit-scrollbar-thumb {
+    background: #888; /* Scrollbar color */
+    border-radius: 4px; /* Rounded edges for the scrollbar */
+  }
+
+  .packages-section::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker color on hover */
+  }
+
+  .packages-section .package-card {
+    min-width: 240px; /* Fixed width for packages */
+  }
+
+  .b2b-box {
+    padding: 20px 5%;
+    max-width: 95%;
+    height: auto;
+  }
+
+  /* Make the stats section more compact on smaller screens */
+  .stats-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-item {
+    width: 80%;
+    margin: 10px 0;
+  }
+
+  .b2b-section h2 {
+    font-size: 2rem; /* Adjust font size for tablets and smaller screens */
+  }
+
+  /* Ensure text and buttons are more responsive */
+  .b2b-buttons {
+    text-align: center;
+    margin-left: 0;
+  }
+  
+  .b2b-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+
+  .hero-buttons a {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+
+  .embrace-journey {
+    flex-direction: column;
+    padding: 30px 15px;
+  }
+
+  .embrace-content {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .embrace-images,
+  .embrace-text {
+      width: 100%;
+  }
+
+  .team-member img {
+      width: 120px;
+      height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1,
+  .explore-text {
+    font-size: 2.5rem;
+  }
+
+  .b2b-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .service-highlights {
+    display: flex;
+    gap: 10px; /* Space between items */
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    padding: 10px 0;
+  }
+
+  .service-highlights img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .packages-section {
+    display: flex;
+    gap: 10px; /* Space between items */
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    padding: 10px 0;
+  }
+
+  .packages-section .package-card {
+    min-width: 200px; /* Adjusted for smaller screens */
+  }
+
+  .b2b-box {
+    width: 100%;
+    padding: 20px 5%;
+  }
+
+  /* Further adjust layout for small screens */
+  .b2b-flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .b2b-text {
+    max-width: 100%;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .b2b-section h2 {
+    font-size: 1.8rem; /* Further reduce font size for very small screens */
+  }
+
+  .b2b-buttons {
+    text-align: center;
+  }
+
+  .b2b-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* Reduce size of hero buttons on small screens */
+  .hero-buttons a {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
+}

@@ -1,0 +1,287 @@
+/* ================================================
+   General Styles
+================================================ */
+
+/* Main About Section */
+.about-us {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+}
+
+.about-us .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.intro h1 {
+    font-size: 3rem;
+    color: #333;
+}
+
+.intro-subtitle {
+    font-size: 1.5rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+.intro-description {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* ================================================
+   Embrace the Journey Section Styles
+================================================ */
+
+.embrace-journey {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: white;
+}
+
+.embrace-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.embrace-images {
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.embrace-image-1,
+.embrace-image-2 {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.experience-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.embrace-text {
+    width: 45%;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.embrace-text h2 {
+    font-size: 3.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.embrace-text h2::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    border-radius: 2px;
+}
+
+.embrace-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.embrace-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.embrace-text ul li {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.embrace-text ul li::before {
+    content: '✔';
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* ================================================
+   Team Section Styles
+================================================ */
+
+.team-section {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.team-section h1 {
+    font-size: 2.5rem;
+    color: #c82333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.team-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;  /* Adjust this to add space between team members */
+    flex-wrap: wrap;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: 180px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-bottom: 30px;  /* This adds space below each team member */
+}
+
+.team-member img {
+    width: 150px;
+    height: 200px;
+    border-radius: 30%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.team-member .name {
+    font-weight: bold;
+    color: #444;
+}
+
+.team-member .position {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.team-member .details {
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.team-member .details .email, 
+.team-member .details .phone {
+    font-size: 0.9rem;
+    color: #007bff;
+}
+
+.team-member .details .phone {
+    margin-top: 5px;
+    color: #28a745;
+}
+/* ================================================
+   Responsive Design for Team Section
+================================================ */
+
+@media (max-width: 768px) {
+    .col-md-3 {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
+
+    /* Adjust Team Member to handle mobile clicks */
+    .team-member {
+        cursor: pointer;
+    }
+}
+
+/* ================================================
+   Stats Section Styles
+================================================ */
+
+.stats-section {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+}
+
+.stats-section .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.stats-section .col-md-3 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.stats-section h3 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.stats-section p {
+    font-size: 1.1rem;
+    color: #777;
+}
+
+/* ================================================
+   General Responsive Design
+================================================ */
+
+@media (max-width: 768px) {
+    .embrace-journey {
+        flex-direction: column;
+        padding: 30px 15px;
+    }
+
+    .embrace-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .embrace-images,
+    .embrace-text {
+        width: 100%;
+    }
+
+    .team-member img {
+        width: 120px;
+        height: 160px;
+    }
+}

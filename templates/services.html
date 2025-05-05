@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Services - Thaibah Travels{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="services-section section-white">
+    <div class="container">
+        <h1 class="page-title">Our Services</h1>
+        <p class="page-subtitle">Discover a range of services designed to make your travel convenient and stress-free.</p>
+        
+        <div class="service-grid">
+            {% for service in services %}
+            <div class="service-card" onclick="flipCard(this)">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <img src="{{ url_for('static', filename='images/' + service.image) }}" alt="{{ service.name }}">
+                        <h4 class="service-name">{{ service.name }}</h4>
+                    </div>
+                    <div class="service-card-back">
+                        <h4 class="service-name">{{ service.name }}</h4>
+                        <p class="card-description">{{ service.description }}</p>
+                        <p class="card-font-size"><strong>Contact:</strong> {{ service.contact_person }}</p>
+                        <p class="card-font-size"><strong>Email:</strong> {{ service.email }}</p>
+                        <p class="card-font-size"><strong>Phone:</strong> {{ service.phone }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/services.js') }}"></script>
+{% endblock %}

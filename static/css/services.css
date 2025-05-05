@@ -1,0 +1,106 @@
+/* General Page Styles */
+.services-section {
+    padding: 40px 0;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: #c82333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.page-subtitle {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Service Card Grid */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Card Flip Styles */
+.service-card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.service-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.service-card.flipped .service-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front and Back Styles */
+.service-card-front,
+.service-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card-front {
+    background-color: #fff;
+}
+
+.service-card-back {
+    background-color: #c82333;
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+.service-card-back h4 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.service-card-back p {
+    margin: 5px 0;
+    color: #ffecd9;
+}
+
+/* Contact Info Styling */
+.service-card-back .card-description {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+.service-card-back .card-font-size {
+    font-size: 1.1rem; /* Increased font size for better visibility */
+    font-weight: 500; /* Added weight for emphasis */
+    line-height: 1.6; /* Adjusted line spacing for readability */
+}
+
+/* Image Styling */
+.service-card-front img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}

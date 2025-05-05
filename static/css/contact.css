@@ -1,0 +1,139 @@
+/* Hero Section */
+.contact-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full height of the viewport */
+    color: #fff;
+    text-align: center;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Keeps the image behind the content */
+}
+
+.contact-hero .hero-content {
+    position: relative;
+    z-index: 1; /* Keeps the content in front of the image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Optional for better text readability */
+}
+
+.contact-hero h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.contact-hero p {
+    font-size: 1.2rem;
+    color: #ffe19f;
+    margin-top: 0;
+}
+
+/* Contact Details Section */
+.contact-details-section {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.contact-details-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-column {
+    flex: 1 1 30%; /* Three columns */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.details h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.details p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #555;
+}
+
+a.contact-item {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Ensure text color doesn't change */
+}
+
+a.contact-item:hover {
+    transform: translateY(-10px); /* Keep hover effect */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Make the layout responsive */
+@media (max-width: 768px) {
+    .contact-column {
+        flex: 1 1 45%; /* Two columns on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-column {
+        flex: 1 1 100%; /* One column on small screens */
+    }
+}

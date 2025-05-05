@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - Thaibah Travels{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="contact-hero">
+    <img src="{{ url_for('static', filename='images/contact.png') }}" alt="Contact Hero Image" class="hero-img">
+    <div class="hero-content">
+        <h1>Contact Us</h1>
+        <p>We are here to help you plan your perfect trip. Get in touch with us today!</p>
+    </div>
+</section>
+
+<section class="contact-details-section">
+    <div class="container">
+        <h2>Get in Touch</h2>
+        <div class="contact-info">
+            <!-- Company -->
+            <div class="contact-column">
+                <a href="https://maps.app.goo.gl/qtyX28GJG9cnaXNL7" target="_blank" class="contact-item" title="View location on maps">
+                    <div class="icon">
+                        <img src="{{ url_for('static', filename='images/location.png') }}" alt="Location Icon">
+                    </div>
+                    <div class="details">
+                        <h3>Kottakkal</h3>
+                        <p>Chenguvetty</p>
+                    </div>
+                </a>
+                <div class="contact-item">
+                    <div class="icon">
+                        <img src="{{ url_for('static', filename='images/mail.png') }}" alt="Email Icon">
+                    </div>
+                    <div class="details">
+                        <h3>Email</h3>
+                        <p>k.thaibah@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">
+                        <img src="{{ url_for('static', filename='images/phone.png') }}" alt="Phone Icon">
+                    </div>
+                    <div class="details">
+                        <h3>Phone</h3>
+                        <p>+91 95620 00109</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}Packages - Thaibah Travels{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/packages.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="packages-section section-white">
+    <div class="container">
+        <h1 class="page-title">Tour Packages</h1>
+        <p class="page-subtitle">Let us book your tour and make your journey unforgettable!</p>
+    </div>
+</section>
+
+<!-- National Packages Section -->
+<section class="packages-section section-cream">
+    <div class="container">
+        <h2 class="section-title">National Packages</h2>
+        <div class="package-grid">
+            {% for package in national_packages %}
+                <div class="package-card" onclick="toggleFlip(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="{{ url_for('static', filename='images/' + package.image) }}" alt="{{ package.name }}">
+                            <h4 class="package-name">{{ package.name }}</h4>
+                            <p>{{ package.description }}</p>
+                            <p class="package-duration">
+                                {% if package.duration_days and package.duration_nights %}
+                                    {{ package.duration_days }} days and {{ package.duration_nights }} nights
+                                {% endif %}
+                            </p>                            
+                            <p class="package-price">{{ '₹' + package.price if package.price else '' }}</p>
+                        </div>
+                        <div class="card-back">
+                            <p class="package-name">{{ package.contact_name }}</p>
+                            <p class="package-phone">{{ package.contact_phone }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <p>No national packages available at the moment.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- International Packages Section -->
+<section class="packages-section section-white">
+    <div class="container">
+        <h2 class="section-title">International Packages</h2>
+        <div class="package-grid">
+            {% for package in international_packages %}
+                <div class="package-card" onclick="toggleFlip(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="{{ url_for('static', filename='images/' + package.image) }}" alt="{{ package.name }}">
+                            <h4 class="package-name">{{ package.name }}</h4>
+                            <p>{{ package.description }}</p>
+                            <p class="package-duration">
+                                {% if package.duration_days and package.duration_nights %}
+                                    {{ package.duration_days }} days and {{ package.duration_nights }} nights
+                                {% endif %}
+                            </p>                            
+                            <p class="package-price">{{ '₹' + package.price if package.price else '' }}</p>
+                        </div>
+                        <div class="card-back">
+                            <p class="package-name">{{ package.contact_name }}</p>
+                            <p class="package-phone">{{ package.contact_phone }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <p>No international packages available at the moment.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/packages.js') }}"></script>
+{% endblock %}
